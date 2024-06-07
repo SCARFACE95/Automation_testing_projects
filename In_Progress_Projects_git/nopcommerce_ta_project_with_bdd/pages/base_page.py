@@ -46,6 +46,7 @@ class BasePage(Browser):
         dropdown = Select(self.find(locator))
         dropdown.select_by_visible_text(text)
 
-
+    def verify_page_title(self, expected_title):
+        assert self.driver.title == expected_title, "Error, title is not correct"
 
 
