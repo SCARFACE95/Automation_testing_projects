@@ -33,7 +33,7 @@
 
 
       #Outline Scenario -> at this moment is added 1 comabinations of valid username and password
-      @test
+      @login
       Scenario Outline: Log in with valid credentials
          When login: I enter "<username>" as username
          And login: I enter "<password>" as password

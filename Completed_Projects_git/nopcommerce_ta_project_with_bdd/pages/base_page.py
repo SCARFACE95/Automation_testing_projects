@@ -1,7 +1,9 @@
 # Asta este un fisier in care se definesc elementele comune ale unei pagini web:
 # de exemplu oriunde ai naviga mereu sunt afisate elementele gen cauta, Login, Register, Categorii etc
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.select import Select
+from selenium.webdriver.support.wait import WebDriverWait
 
 from browser import Browser
 
@@ -15,6 +17,9 @@ class BasePage(Browser):
     #Si butonul de search
     SEARCH_BUTTON = (By.CLASS_NAME, "search-box-button")
 
+
+    def wait_for_elem(self, xpath_selector):
+        WebDriverWait(self.driver, 5).until(expected_conditions.presence_of_element_located((By.XPATH, xpath_selector)))
 
     def find(self, locator):
         return self.driver.find_element(*locator)

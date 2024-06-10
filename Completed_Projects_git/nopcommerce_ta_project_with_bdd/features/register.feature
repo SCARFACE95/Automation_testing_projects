@@ -3,7 +3,7 @@ Feature: Register
   Background: Open register page
     Given Register: I am on the register page
 
-  @regression
+  @obsolete
   Scenario: Check validation for mandatory fields
     When Register: I click Register button
     Then Register: First name mandatory error is displayed
@@ -16,7 +16,7 @@ Feature: Register
   Scenario: Check validation for all fields and if register success
     When Register: I enter "Andrei" as First Name
     And Register: I enter "Robert" Last Name
-    #And I enter date of birth day {}, month {}, year {}
+
     And Register: I click on day of birth box
     And Register: I enter "6" as day o birth
 
@@ -28,9 +28,9 @@ Feature: Register
 
     And Register: I enter "bst24@gmail.com" as new Email
     And Register: I enter "HOMEcompany" as Company Name
-        #password e deja mapat in login
+
     And Login: I enter "123456789" as password
     And Register: I enter "123456789" as confirm password
-        #register button e mapat deja in register
+
     And Register: I click Register button
     Then Register: Success message displayed "Your registration completed"

@@ -1,4 +1,5 @@
 import random
+from time import sleep
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
@@ -9,7 +10,7 @@ from pages.base_page import BasePage
 class RegisterPage(BasePage):
     #Selectors
     #Mandatory field selectors
-    ERROR_FIRST_NAME = (By.ID, "FirstName-error")
+    ERROR_FIRST_NAME = (By.XPATH, '//span[@id="FirstName-error"]')
     ERROR_LAST_NAME = (By.ID, "LastName-error")
     EMAIL_ERROR = (By.ID, "Email-error")
     PASSWORD_CONFIRM_ERROR = (By.ID, "ConfirmPassword-error")
@@ -74,6 +75,7 @@ class RegisterPage(BasePage):
 
     #Validations
     def verify_first_name_error_displayed(self):
+        self.wait_for_elem(self.ERROR_FIRST_NAME)
         assert self.find(self.ERROR_FIRST_NAME).is_displayed(), "First name error is not displayed"
         assert self.find(self.ERROR_FIRST_NAME).text == "First name is required."
 
