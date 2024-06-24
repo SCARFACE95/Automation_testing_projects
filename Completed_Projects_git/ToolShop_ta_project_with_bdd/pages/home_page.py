@@ -14,7 +14,6 @@ class HomePage(BasePage):
     SEARCH_BOX = (By.XPATH, '//input[@id="search-query"]')
     SEARCH_BUTTON = (By.XPATH, '//button[@data-test="search-submit"]')
     CLASS_PRODUCT_CARD = (By.XPATH, '//*[@class="card"]')
-    CLASS_PRODUCT_CARD_1 = '//*[@class="card"]'
     SORT_BOX = (By.XPATH, '//select[@data-test="sort"]')
     SLIDER_BOX = (By.XPATH, '//div[@class="input-group mb-3"]')
     SLIDER_VALUE = (By.XPATH, '//span[@class="ngx-slider-span ngx-slider-bubble ngx-slider-model-high"]')
@@ -61,6 +60,7 @@ class HomePage(BasePage):
 
     def click_delete_filter(self):
         self.click(self.DELETE_FILTER_BUTTON)
+        sleep(3)
 
 
     def click_on_first_product_from_the_list(self):
@@ -70,8 +70,8 @@ class HomePage(BasePage):
 
     #Validations
     def verify_search_results_are_displayed(self):
-        self.wait_for_elem(self.CLASS_PRODUCT_CARD_1, 10)
-        #sleep(3)
+        #self.wait_for_elem(self.CLASS_PRODUCT_CARD_1, 10)
+        sleep(3)
         results_list = self.find_all(self.CLASS_PRODUCT_CARD)
         assert len(results_list) > 0, "Unexpected error"
 

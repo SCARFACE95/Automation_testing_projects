@@ -31,7 +31,8 @@ class CheckoutPage(BasePage):
         self.click(self.PROCEED_TO_CHECKOUT_BUTTON2)
 
     def click_proceed_to_checkout_button3(self):
-        self.wait_for_element_presence(self.PROCEED_TO_CHECKOUT_BUTTON3, 5)
+        sleep(2)
+        self.wait_for_element_to_be_clickable(self.PROCEED_TO_CHECKOUT_BUTTON3, 10)
         self.click(self.PROCEED_TO_CHECKOUT_BUTTON3)
 
     def choose_payment_option(self):

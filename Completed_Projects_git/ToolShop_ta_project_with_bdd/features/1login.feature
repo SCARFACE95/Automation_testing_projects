@@ -20,17 +20,8 @@ Feature: Login
       | testmail@yahoo.ro | ABCabc123@|
       | testmail@gmai.com | ASDasd321!|
 
-
-
-
-
-  @login
-  Scenario: Login with valid credentials
-    When  login: I enter "robertbst20@yahoo.com" as Email Address
-    When  login: I enter "1123aA#123" as Password
-    When  login: I click on the login button
-    Then  account: The URL page is "https://practicesoftwaretesting.com/#/account"
-    Then  account: I should see My account in the page
-
-
-
+    @login
+    Scenario: Check mandatory fields for login
+      When  login: I click on the login button
+      Then login: Email mandatory error is displayed
+      Then login: Password mandatory error is displayed

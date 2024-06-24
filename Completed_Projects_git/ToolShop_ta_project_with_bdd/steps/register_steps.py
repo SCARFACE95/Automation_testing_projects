@@ -40,9 +40,9 @@ def step_impl(context, text):
 def step_impl(context, text):
     register_page.type_phone(text)
 
-@When('register: I enter "{text}" as Email Address')
-def step_impl(context, text):
-    register_page.type_username(text)
+@When('register: I enter a random Email Address')
+def step_impl(context):
+    register_page.type_username()
 
 
 @When('register: I enter "{text}" as Password')
@@ -73,8 +73,9 @@ def step_impl(context):
 
 @Then('login: I should land on login page')
 def step_impl(context):
-    login_page.verify_login_label_after_register()
     login_page.verify_URL_after_register()
+    login_page.verify_login_label_after_register()
+
 
 
 

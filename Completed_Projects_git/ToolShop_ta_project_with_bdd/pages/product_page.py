@@ -14,6 +14,7 @@ class ProductPage(BasePage):
     CART_CHECKOUT = (By.XPATH, '//span[@id="lblCartCount"]')
     #ACTIONS
     def click_on_add_to_cart_button(self):
+        self.wait_for_elem(self.ADD_TO_CART_BUTTON,10)
         self.click(self.ADD_TO_CART_BUTTON)
 
     def click_on_cart_checkout_button(self):
@@ -22,7 +23,10 @@ class ProductPage(BasePage):
 
     #VALIDATIONS
     def verify_product_name(self, expected):
+        #sleep(3)
+        self.wait_for_element_presence(self.PRODUCT_NAME, 10)
         actual = self.find(self.PRODUCT_NAME).text
+        print(actual)
         assert actual == expected, 'Unexpected Error'
 
     def verify_message_alert_is_displayed(self):

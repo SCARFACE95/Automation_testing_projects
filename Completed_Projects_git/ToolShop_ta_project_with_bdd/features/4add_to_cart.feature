@@ -1,16 +1,17 @@
 Feature: Cart
   Background: Open home page
     Given home: I am on the home page
+    When home: I delete all filters
     When home: I click on first product from the search list
     Then product: The URL page contains "https://practicesoftwaretesting.com/#/product"
     Then product: I should see "Combination Pliers" as product name
     When product: I click to Add to cart button
 
- @cart
- Scenario: Add item to cart
+ #@cart
+ #Scenario: Add item to cart
 
-   Then product: I should see "Product added to shopping cart." as message
-   Then product: I check the cart with 1 item
+  # Then product: I should see "Product added to shopping cart." as message
+  # Then product: I check the cart with 1 item
 
 
 

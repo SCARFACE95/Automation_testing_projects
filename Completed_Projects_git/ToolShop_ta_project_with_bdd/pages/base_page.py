@@ -11,13 +11,17 @@ class BasePage(Browser):
 
     #Actions
 
-    def wait_for_element_presence(self,locator, seconds):
+    def wait_for_element_presence(self, locator, seconds):
         # testez ca finish este afisat si adaug wait
         wait = WebDriverWait(self.driver, timeout=seconds)
         wait.until(expected_conditions.visibility_of_element_located(locator))
     def wait_for_elem(self, locator, seconds):
         wait = WebDriverWait(self.driver, timeout=seconds)
         wait.until(expected_conditions.presence_of_element_located(locator))
+
+    def wait_for_element_to_be_clickable(self, locator, seconds):
+        wait = WebDriverWait(self.driver, timeout=seconds)
+        wait.until(expected_conditions.element_to_be_clickable(locator))
 
     def wait_url(self, url):
         WebDriverWait(self.driver, 10).until(expected_conditions.url_to_be(url))

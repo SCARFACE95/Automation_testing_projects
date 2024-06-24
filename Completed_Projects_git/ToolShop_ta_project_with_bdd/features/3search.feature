@@ -39,7 +39,7 @@ Feature: Search
        Examples:
          | name    |
          | Hammer  |
-         | Chisels |
+         | Screwdriver |
          | Wrench |
 
 

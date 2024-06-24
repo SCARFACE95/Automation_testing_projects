@@ -1,8 +1,10 @@
+import random
 from time import sleep
 
 from selenium.webdriver.common.by import By
 
 from pages.base_page import BasePage
+
 
 
 class RegisterPage(BasePage):
@@ -54,8 +56,10 @@ class RegisterPage(BasePage):
         self.type(self.STATE, text)
     def type_phone(self, text):
         self.type(self.PHONE, text)
-    def type_username(self, text):
-        self.type(self.USERNAME, text)
+    def type_username(self):
+        random_number = str(random.randint(1,10000000000000))
+        username = f"robertbst{random_number}@yahoo.com"
+        self.type(self.USERNAME, username)
     def type_password(self, text):
         self.type(self.PASSWORD, text)
     def select_country(self):

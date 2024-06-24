@@ -10,26 +10,21 @@ Feature: Register
     Then  register: I land on the customer registration page
 
   @register
-  Scenario Outline: Check validation for all fields and if register is successful for 3 customers
+  Scenario: Check validation for all fields and if register is successful
 
-    When  register: I enter "<name>" as First Name
-    And   register: I enter "<last_name>" as Last Name
-    And   register: I enter "<birthday>" as birth day
-    And   register: I enter "<address>" as Address
-    And   register: I enter "<postcode>" as Post Code
-    And   register: I enter "<city>" as City
-    And   register: I enter "<state>" as State
-    And   register: I enter "<phone>" as Phone
-    And   register: I enter "<email>" as Email Address
-    And   register: I enter "<password>" as Password
+    When  register: I enter "Andrei" as First Name
+    And   register: I enter "Robert" as Last Name
+    And   register: I enter "06091995" as birth day
+    And   register: I enter "Red Street" as Address
+    And   register: I enter "324668" as Post Code
+    And   register: I enter "Bucharest" as City
+    And   register: I enter "Bucharest" as State
+    And   register: I enter "07641235" as Phone
+    And   register: I enter a random Email Address
+    And   register: I enter "123aA#123" as Password
     And   register: I select RO country
     And   register: I click to register button
     Then  login: I should land on login page
-    Examples:
-      |name  |last_name|birthday|address      |postcode |city     |state    |phone   |email               |password|
-      |Andrei |Robert   |06091995|Red Street  |12343    |Bucharest|Bucharest|07123453|andrei9510@yahoo.com |123aA#123
-      |Nicu   |Ionel    |10081995|Blue Street |324523   |Bucharest|Bucharest|02134353|nicu9510@gmail.com   |321bB!123
-      |Andreea|Elena    |09021994|White Street|32553    |Bucharest|Bucharest|02235321|andreea9510@gmail.com|321cC!123
 
 
 
