@@ -7,7 +7,7 @@ base_page = BasePage()
 checkout_page = CheckoutPage()
 @Then('checkout: I land on checkout page')
 def step_impl(context):
-    base_page.verify_page_url('https://practicesoftwaretesting.com/#/checkout')
+    base_page.verify_page_url('https://practicesoftwaretesting.com/checkout')
     base_page.verify_page_title('Checkout - Practice Software Testing - Toolshop - v5.0')
 
 

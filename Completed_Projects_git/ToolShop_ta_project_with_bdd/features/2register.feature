@@ -5,7 +5,7 @@ Feature: Register
   Background: Enter to register page
     Given home: I am on the home page
     When  home: I click on Sign In button
-    Then  login: The URL page is "https://practicesoftwaretesting.com/#/auth/login"
+    Then  login: The URL page is "https://practicesoftwaretesting.com/auth/login"
     When  login: I click on Register your account link
     Then  register: I land on the customer registration page
 

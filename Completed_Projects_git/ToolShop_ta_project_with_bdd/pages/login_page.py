@@ -51,7 +51,7 @@ class LoginPage(BasePage):
 
     def verify_URL_after_register(self):
 
-        expected = "https://practicesoftwaretesting.com/#/auth/login"
+        expected = "https://practicesoftwaretesting.com/auth/login"
         self.wait_url(expected)
         actual = self.driver.current_url
         assert expected == actual, 'Error, the URL is wrong'

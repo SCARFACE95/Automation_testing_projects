@@ -68,7 +68,7 @@ def step_impl(context):
 #Then
 @Then('register: I land on the customer registration page')
 def step_impl(context):
-    base_page.verify_page_url('https://practicesoftwaretesting.com/#/auth/register')
+    base_page.verify_page_url('https://practicesoftwaretesting.com/auth/register')
     base_page.verify_page_title('Register - Practice Software Testing - Toolshop - v5.0')
 
 @Then('login: I should land on login page')
